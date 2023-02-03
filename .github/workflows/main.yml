@@ -9,7 +9,9 @@ on:
   workflow_dispatch:
     inputs:
       tags:
-        description: 'Manual Video Feed Deploy'  
+        description: 'Manual Video Feed Deploy'
+permissions:
+  contents: write
 jobs:
   build-and-deploy:
     runs-on: ubuntu-20.04
