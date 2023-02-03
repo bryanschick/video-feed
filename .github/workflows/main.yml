@@ -28,7 +28,7 @@ jobs:
         run: |
           python script.py
       - name: Deploy Video Feed to GH Pages
-        uses: JamesIves/github-pages-deploy-action@4.4.1
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
           single-commit: true
           git-config-email: <>
