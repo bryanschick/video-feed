@@ -1,0 +1,36 @@
+name: main
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    # Run this script every day at 7AM UTC
+    - cron:  '0 7 * * *'
+  workflow_dispatch:
+    inputs:
+      tags:
+        description: 'Manual Video Feed Deploy'  
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          cache: 'pip'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Generate Video Feed
+        run: |
+          python script.py
+      - name: Deploy Video Feed to GH Pages
+        uses: JamesIves/github-pages-deploy-action@4.4.1
+        with:
+          single-commit: true
+          git-config-email: <>
+          branch: gh-pages 
+          folder: public
