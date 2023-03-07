@@ -12,6 +12,16 @@ feeds = [
     "https://www.youtube.com/feeds/videos.xml?channel_id=UCv1DvRY5PyHHt3KN9ghunuw", #sakurai
     "https://www.youtube.com/feeds/videos.xml?channel_id=UCpvtp7mH0Cdq8FQUxcjDq0Q", #mlig
     "https://www.youtube.com/feeds/videos.xml?channel_id=UCm8xNi3kuBHE99QH-N_VJVg", #sharmeleon
+    "https://www.youtube.com/feeds/videos.xml?channel_id=UCLXo7UDZvByw2ixzpQCufnA", #vox
+    "https://www.youtube.com/feeds/videos.xml?channel_id=UCmGSJVG3mCRXVOP4yZrU1Dw", #johnny harris
+    "https://www.youtube.com/feeds/videos.xml?channel_id=UC415bOPUcGSamy543abLmRA", #cleo abram
+    "https://www.youtube.com/feeds/videos.xml?channel_id=UCZB6V9fUov0Mx_us3MWWILg", #people make games
+    "https://www.youtube.com/feeds/videos.xml?channel_id=UC0fDG3byEcMtbOqPMymDNbw", #noclip
+    "https://www.youtube.com/feeds/videos.xml?channel_id=UCR9ygnRBOt8qfSbkCwOA3pw", #samurai matcha
+    "https://www.youtube.com/feeds/videos.xml?channel_id=UCQLq3ElThYSwaO2U9Sz8Jow", #here's my question for you
+    "https://www.youtube.com/feeds/videos.xml?channel_id=UCJ24N4O0bP7LGLBDvye7oCA", #matt d'avella
+    "https://www.youtube.com/feeds/videos.xml?channel_id=UCrdWRLq10OHuy7HmSckV3Vg", #nathaniel drew
+    "https://www.youtube.com/feeds/videos.xml?channel_id=UCZbOmMsPgxuWmj5pGymAOnA", #nathaniel drew no backup
     ]
 
 class VideoEntry:
