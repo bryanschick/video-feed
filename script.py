@@ -14,8 +14,11 @@ feeds = [
     "https://www.youtube.com/feeds/videos.xml?channel_id=UCm8xNi3kuBHE99QH-N_VJVg", #sharmeleon
     "https://www.youtube.com/feeds/videos.xml?channel_id=UCZB6V9fUov0Mx_us3MWWILg", #people make games
     "https://www.youtube.com/feeds/videos.xml?channel_id=UC0fDG3byEcMtbOqPMymDNbw", #noclip
-    "https://www.youtube.com/feeds/videos.xml?channel_id=UCR9ygnRBOt8qfSbkCwOA3pw", #samurai matcha
     "https://www.youtube.com/feeds/videos.xml?channel_id=UCQLq3ElThYSwaO2U9Sz8Jow", #here's my question for you
+    "https://www.youtube.com/feeds/videos.xml?channel_id=UCb_sF2m3-2azOqeNEdMwQPw", #matthewmatosis
+    "https://www.youtube.com/feeds/videos.xml?channel_id=UCvM5uRsbhfp_aW5lLl3SxVg", #unseen
+    "https://www.youtube.com/feeds/videos.xml?channel_id=UC-Lg1MlswX4jXkMs93XChMw", #bokeh
+    "https://www.youtube.com/feeds/videos.xml?channel_id=UCeTfBygNb1TahcNpZyELO8g", #jacob geller
     ]
 
 class VideoEntry:
