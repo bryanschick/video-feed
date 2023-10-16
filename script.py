@@ -19,6 +19,7 @@ feeds = [
     "https://www.youtube.com/feeds/videos.xml?channel_id=UCvM5uRsbhfp_aW5lLl3SxVg", #unseen
     "https://www.youtube.com/feeds/videos.xml?channel_id=UC-Lg1MlswX4jXkMs93XChMw", #bokeh
     "https://www.youtube.com/feeds/videos.xml?channel_id=UCeTfBygNb1TahcNpZyELO8g", #jacob geller
+    "https://www.youtube.com/feeds/videos.xml?channel_id=UCdnmg27qzE0P_mcKSjd7hwQ", #kamiya
     ]
 
 class VideoEntry:
