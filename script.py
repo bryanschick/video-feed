@@ -72,7 +72,7 @@ def render(videoEntries, build_datetime):
     html = '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Video Feed: '+str(build_datetime)+'</title><style>.entries {display:flex;flex-wrap:wrap;justify-content:center} .entry {flex: 0 1 40ch;margin:1ch} .thumbnail {width:100%}</style></head><body><div class="entries">'
     for video in videoEntries:
         html += '<div class="entry">'
-        html += '<img class="thumbnail" src="'+video.altThumbnail()+'">'
+        html += '<img class="thumbnail" src="'+video.thumbnail+'">'
         html += '<p class="title"><a class="altSource" rel="noopener noreferrer nofollow" href="'+video.altSource()+'">'+video.title+'</a></p>'
         html += '<a class="source" rel="noopener noreferrer nofollow" href="'+video.source+'">Source</a>'
         html += '</div>'
