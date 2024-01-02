@@ -9,12 +9,9 @@ feeds = [
     "https://www.youtube.com/feeds/videos.xml?channel_id=UCjKSoJlPgcK6BmoSqXpj5xQ", #Action Button
     "https://www.youtube.com/feeds/videos.xml?channel_id=UCO8U0kx_oDhgd3o57rQAlXQ", #Tim Rogers
     "https://www.youtube.com/feeds/videos.xml?channel_id=UCjNErCQgCndSOl6t33m1-nQ", #hazel
-    "https://www.youtube.com/feeds/videos.xml?channel_id=UCv1DvRY5PyHHt3KN9ghunuw", #sakurai
-    "https://www.youtube.com/feeds/videos.xml?channel_id=UCpvtp7mH0Cdq8FQUxcjDq0Q", #mlig
     "https://www.youtube.com/feeds/videos.xml?channel_id=UCm8xNi3kuBHE99QH-N_VJVg", #sharmeleon
     "https://www.youtube.com/feeds/videos.xml?channel_id=UCZB6V9fUov0Mx_us3MWWILg", #people make games
     "https://www.youtube.com/feeds/videos.xml?channel_id=UC0fDG3byEcMtbOqPMymDNbw", #noclip
-    "https://www.youtube.com/feeds/videos.xml?channel_id=UCQLq3ElThYSwaO2U9Sz8Jow", #here's my question for you
     "https://www.youtube.com/feeds/videos.xml?channel_id=UCb_sF2m3-2azOqeNEdMwQPw", #matthewmatosis
     "https://www.youtube.com/feeds/videos.xml?channel_id=UCvM5uRsbhfp_aW5lLl3SxVg", #unseen
     "https://www.youtube.com/feeds/videos.xml?channel_id=UC-Lg1MlswX4jXkMs93XChMw", #bokeh
@@ -23,24 +20,17 @@ feeds = [
     ]
 
 class VideoEntry:
-    def __init__(self, channel, title, source, published, thumbnail):
+    def __init__(self, channel, title, source, published):
         self.channel = channel
         self.title = title
         self.source = source
         self.published = published
-        self.thumbnail = thumbnail
 
     def altSource(self):
         #https://piped.video/watch?v=some_id
         url = urlparse(self.source)
         #todo: will fail on embedded username:password and nonstandard port
         altUrl = url._replace(netloc="piped.video")
-        return urlunparse(altUrl)
-
-    def altThumbnail(self):
-        #https://pipedproxy.kavin.rocks/vi/some_id/hqdefault.jpg?host=i.ytimg.com
-        url = urlparse(self.thumbnail)
-        altUrl = url._replace(netloc="pipedproxy.kavin.rocks", query="host=i.ytimg.com")
         return urlunparse(altUrl)
 
 def feedparser_to_local_domain(feedUri, recent_datetime):
@@ -60,9 +50,7 @@ def feedparser_to_local_domain(feedUri, recent_datetime):
             channel_name,
             video.get('title', 'No title'),
             video.get('link', 'No link'),
-            video.get('published', 'No published'),
-            #todo: handle thumbnail missing
-            video.get('media_thumbnail', 'No thumbnail')[0]['url']
+            video.get('published', 'No published')
         )
         videos.append(video_entry)
     return videos
@@ -72,7 +60,6 @@ def render(videoEntries, build_datetime):
     html = '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Video Feed: '+str(build_datetime)+'</title><style>.entries {display:flex;flex-wrap:wrap;justify-content:center} .entry {flex: 0 1 40ch;margin:1ch} .thumbnail {width:100%}</style></head><body><div class="entries">'
     for video in videoEntries:
         html += '<div class="entry">'
-        html += '<img class="thumbnail" src="'+video.thumbnail+'">'
         html += '<p class="title"><a class="altSource" rel="noopener noreferrer nofollow" href="'+video.altSource()+'">'+video.title+'</a></p>'
         html += '<a class="source" rel="noopener noreferrer nofollow" href="'+video.source+'">Source</a>'
         html += '</div>'
